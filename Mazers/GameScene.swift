@@ -1,3 +1,4 @@
+import Foundation
 import SpriteKit
 import GameplayKit
 
@@ -15,8 +16,8 @@ class GameScene: SKScene {
     private var obsticles : [SKSpriteNode] = []
     
     private var gameStarted = false
-    private var timeLimit = 1000
-    private var timer = 1000
+    private var timeLimit = 100
+    private var clock: Clock?
     
     override func didMove(to view: SKView) {
 
@@ -113,6 +114,13 @@ class GameScene: SKScene {
     
     func startTheGame() {
         gameStarted = true
+        if let timeLabel = self.childNode(withName: "timerLabel") as! SKLabelNode? {
+            let clock = Clock(start: timeLimit, label: timeLabel, selector: {
+                self.terminateLevel()
+            })
+            clock.startCountdown()
+            self.clock = clock
+        }
     }
     
     func levelCompleted() {
@@ -124,12 +132,11 @@ class GameScene: SKScene {
         gameViewController.loadNextLevel()
     }
 
-    func terminateLevel() {
-        // End the game
+    @objc func terminateLevel() {
         gameStarted = false
         movingSquare = false
         squareNode?.position = startingPosition!
-        timer = timeLimit
+        self.clock?.stopCountdown()
     }
     
     func didCollisionOccur() -> Bool {
@@ -172,24 +179,12 @@ class GameScene: SKScene {
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        
         didPassFinishLine()
 
         if didCollisionOccur() {
             terminateLevel()
         }
-        
-        if gameStarted {
-            if let timeLabel = self.childNode(withName: "timerLabel") as! SKLabelNode? {
-                timeLabel.text = String(timer)
-            }
-            timer -= 1
-            if timer < 0 {
-                terminateLevel()
-                timer = timeLimit
-            }
-        }
-        
+
     }
 }
 
