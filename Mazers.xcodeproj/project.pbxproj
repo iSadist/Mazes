@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E145151B1FAA5D2C0072F1D8 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E145151A1FAA5D2C0072F1D8 /* Level1.sks */; };
+		E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CE91FB76B8E00A60E62 /* Level99.sks */; };
+		E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CEB1FB76C6500A60E62 /* Level4.sks */; };
+		E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CED1FB776DB00A60E62 /* Level5.sks */; };
+		E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1729B2B1FB7646C004AB358 /* Level3.sks */; };
+		E1F5F09B1FB3AAF80064FDCF /* metalTest.metal in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09A1FB3AAF80064FDCF /* metalTest.metal */; };
+		E1F5F09D1FB3AD9D0064FDCF /* Obsticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09C1FB3AD9D0064FDCF /* Obsticle.swift */; };
+		E1F5F09F1FB3ADAF0064FDCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09E1FB3ADAF0064FDCF /* Player.swift */; };
+		E1F5F0A11FB3ADC00064FDCF /* MovingObsticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */; };
+		E1F5F0A31FB3ADCE0064FDCF /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */; };
 		E1F6B2B81FA9261700BCB464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */; };
-		E1F6B2BA1FA9261700BCB464 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1F6B2B91FA9261700BCB464 /* GameScene.sks */; };
+		E1F6B2BA1FA9261700BCB464 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1F6B2B91FA9261700BCB464 /* Level2.sks */; };
 		E1F6B2BC1FA9261700BCB464 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1F6B2BB1FA9261700BCB464 /* Actions.sks */; };
 		E1F6B2BE1FA9261700BCB464 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6B2BD1FA9261700BCB464 /* GameScene.swift */; };
 		E1F6B2C01FA9261700BCB464 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F6B2BF1FA9261700BCB464 /* GameViewController.swift */; };
@@ -37,9 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E145151A1FAA5D2C0072F1D8 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		E1667CE91FB76B8E00A60E62 /* Level99.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level99.sks; sourceTree = "<group>"; };
+		E1667CEB1FB76C6500A60E62 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
+		E1667CED1FB776DB00A60E62 /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		E1729B2B1FB7646C004AB358 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		E1F5F09A1FB3AAF80064FDCF /* metalTest.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = metalTest.metal; sourceTree = "<group>"; };
+		E1F5F09C1FB3AD9D0064FDCF /* Obsticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obsticle.swift; sourceTree = "<group>"; };
+		E1F5F09E1FB3ADAF0064FDCF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingObsticle.swift; sourceTree = "<group>"; };
+		E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		E1F6B2B41FA9261700BCB464 /* Mazers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mazers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1F6B2B91FA9261700BCB464 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E1F6B2B91FA9261700BCB464 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
 		E1F6B2BB1FA9261700BCB464 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		E1F6B2BD1FA9261700BCB464 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E1F6B2BF1FA9261700BCB464 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +124,12 @@
 			isa = PBXGroup;
 			children = (
 				E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */,
-				E1F6B2B91FA9261700BCB464 /* GameScene.sks */,
+				E1667CE91FB76B8E00A60E62 /* Level99.sks */,
+				E1667CED1FB776DB00A60E62 /* Level5.sks */,
+				E1667CEB1FB76C6500A60E62 /* Level4.sks */,
+				E1729B2B1FB7646C004AB358 /* Level3.sks */,
+				E1F6B2B91FA9261700BCB464 /* Level2.sks */,
+				E145151A1FAA5D2C0072F1D8 /* Level1.sks */,
 				E1F6B2BB1FA9261700BCB464 /* Actions.sks */,
 				E1F6B2BD1FA9261700BCB464 /* GameScene.swift */,
 				E1F6B2BF1FA9261700BCB464 /* GameViewController.swift */,
@@ -112,6 +137,11 @@
 				E1F6B2C41FA9261700BCB464 /* Assets.xcassets */,
 				E1F6B2C61FA9261700BCB464 /* LaunchScreen.storyboard */,
 				E1F6B2C91FA9261700BCB464 /* Info.plist */,
+				E1F5F09A1FB3AAF80064FDCF /* metalTest.metal */,
+				E1F5F09C1FB3AD9D0064FDCF /* Obsticle.swift */,
+				E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */,
+				E1F5F09E1FB3ADAF0064FDCF /* Player.swift */,
+				E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */,
 			);
 			path = Mazers;
 			sourceTree = "<group>";
@@ -242,8 +272,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F6B2C31FA9261700BCB464 /* Main.storyboard in Resources */,
-				E1F6B2BA1FA9261700BCB464 /* GameScene.sks in Resources */,
+				E1F6B2BA1FA9261700BCB464 /* Level2.sks in Resources */,
+				E145151B1FAA5D2C0072F1D8 /* Level1.sks in Resources */,
 				E1F6B2C51FA9261700BCB464 /* Assets.xcassets in Resources */,
+				E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */,
+				E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */,
+				E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */,
+				E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */,
 				E1F6B2C81FA9261700BCB464 /* LaunchScreen.storyboard in Resources */,
 				E1F6B2BC1FA9261700BCB464 /* Actions.sks in Resources */,
 			);
@@ -270,9 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1F5F09D1FB3AD9D0064FDCF /* Obsticle.swift in Sources */,
 				E1F6B2BE1FA9261700BCB464 /* GameScene.swift in Sources */,
+				E1F5F0A31FB3ADCE0064FDCF /* Clock.swift in Sources */,
+				E1F5F0A11FB3ADC00064FDCF /* MovingObsticle.swift in Sources */,
 				E1F6B2C01FA9261700BCB464 /* GameViewController.swift in Sources */,
 				E1F6B2B81FA9261700BCB464 /* AppDelegate.swift in Sources */,
+				E1F5F09F1FB3ADAF0064FDCF /* Player.swift in Sources */,
+				E1F5F09B1FB3AAF80064FDCF /* metalTest.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9L559MT2U;
 				INFOPLIST_FILE = Mazers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jan-Inc..Mazers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -456,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9L559MT2U;
 				INFOPLIST_FILE = Mazers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jan-Inc..Mazers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
