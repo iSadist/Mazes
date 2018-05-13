@@ -12,16 +12,23 @@ import GameplayKit
 
 class Player: SKShapeNode {
     
+    
+//    init(rect: CGRect) {
+//        super.init(rect: rect)
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Touched!")
-        
-        touches.first?.location(in: self)
-        
+//        touches.first?.location(in: self)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Moved!")
-        self.position = (touches.first?.location(in: self))!
+//        self.position = (touches.first?.location(in: self))!
     }
     
 }

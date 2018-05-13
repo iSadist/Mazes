@@ -7,21 +7,14 @@ let debugMode = true
 class GameViewController: UIViewController {
     
     private var gameView: SKView?
-    private var currentLevel: Int = 1
+    private var nextLevel: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             gameView = view
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "Level1") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+            self.loadNextLevel()
             
             view.ignoresSiblingOrder = true
             
@@ -41,9 +34,9 @@ class GameViewController: UIViewController {
     }
     
     func loadNextLevel() {
-        currentLevel += 1
-        let levelName = "Level" + String(currentLevel)
+        let levelName = "Level" + String(nextLevel)
         _ = loadLevel(name: levelName)
+        nextLevel += 1
     }
 
     override var shouldAutorotate: Bool {

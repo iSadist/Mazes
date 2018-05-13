@@ -10,32 +10,47 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
-class MovingObsticle: SKSpriteNode {
+class MovingObsticle: SKShapeNode {
     
-    private var direction: CGVector? = CGVector.init(dx: 0, dy: 1)
+    private var direction: CGVector = CGVector.init(dx: 3, dy: 0)
+    
+    init(rect: CGRect){
+        super.init()
+        
+        self.path = CGPath(rect: rect, transform: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func takeStep () {
+        self.position.x += direction.dx
+        self.position.y += direction.dy
+        
+        // Prevent the square from going outside the screen
+    }
     
     override func intersects(_ node: SKNode) -> Bool {
         if node.intersects(self) {
-            // If it hits an obsticle, reverese direction
-            if node.name == "player" {
-                
-            }
-            
-            // If the moving obsticle hits the player
-            if node.name == "SKSpriteNode" {
+            switch node.name {
+              case "player":
+                print("Intersected player")
+                return true
+              case "SKSpriteNode":
                 self.reverseDirection()
+                return false
+              default:
+                return false
             }
-            return true
         } else {
             return false
         }
     }
     
     func reverseDirection() {
-        if ((direction?.dy = CGFloat(1)) != nil) {
-            direction?.dy = CGFloat(-1)
-        } else {
-            direction?.dy = CGFloat(1)
-        }
+        print("Reversing direction")
+        direction.dx = -direction.dx
+        direction.dy = -direction.dy
     }
 }

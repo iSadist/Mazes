@@ -6,42 +6,24 @@ class GameScene: SKScene {
     
     private var victoryLabel : SKLabelNode?
     private var spinnyNode : SKShapeNode?
-    private var squareNode : SKShapeNode?
-    
+    private var playerSquare : SKShapeNode?
     private var startingPosition : CGPoint?
     private var finishPosition : SKSpriteNode?
     private var squareSize : CGFloat?
     private var movingSquare : Bool = false
-    
     private var obsticles : [SKSpriteNode] = []
-    
+    private var movingObsticles : [MovingObsticle] = []
     private var gameStarted = false
     private var timeLimit = 100
     private var clock: Clock?
     
     override func didMove(to view: SKView) {
-
-        // Set start position
-        if let startPosition = self.childNode(withName: "startPosition") as! SKSpriteNode? {
-            // Let the starting position be determined by the sks file
-            self.startingPosition = startPosition.position
-            startPosition.removeFromParent()
-        }
-        
         finishPosition = self.childNode(withName: "finishPosition") as! SKSpriteNode?
-        
-        // Store the obsticles
-        let obsticleNodes = self.children.filter({ (node) -> Bool in
-            return node.name == "SKSpriteNode"
-        })
-        
-        obsticles = obsticleNodes as! [SKSpriteNode]
-        
-//      Get label node from scene and store it for use later
+        //      Get label node from scene and store it for use later
         victoryLabel = self.childNode(withName: "victoryLabel") as? SKLabelNode
         if let label = self.victoryLabel {
             label.alpha = 0.0
-//            label.run(SKAction.fadeIn(withDuration: 2.0))
+            //            label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
         // Create shape node to use during mouse interaction
@@ -59,30 +41,18 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
         
-        // Create player square
         squareSize = w
         
-        let rect = CGRect.init(x: 0, y: 0, width: squareSize!, height: squareSize!)
-        self.squareNode = SKShapeNode.init(rect: rect)
-        if let squareNode = self.squareNode {
-            squareNode.name = "player"
-            squareNode.position = startingPosition!
-            squareNode.fillColor = UIColor.blue
-        }
-        self.addChild(squareNode!)
+        self.storeObsticles()
+        self.storeMovingObsticles()
         
-//        let playerNode = Player.init(rect: rect)
-//        playerNode.position = startingPosition!
-//        playerNode.fillColor = UIColor.green
-//
-//        self.addChild(playerNode)
-        
+        self.createPlayer()
     }
     
     // MARK: Touch events
     
     func touchDown(atPoint pos : CGPoint) {
-        if pos.isInsideSquare(other: (squareNode?.position)!, size: squareSize!) {
+        if pos.isInsideSquare(other: (playerSquare?.position)!, size: squareSize!) {
             movingSquare = true
         }
     }
@@ -102,7 +72,7 @@ class GameScene: SKScene {
             
             // Move the square
             let newPoint = CGPoint.init(x: pos.x - squareSize!/2, y: pos.y - squareSize!/2)
-            squareNode?.position = newPoint
+            playerSquare?.position = newPoint
         }
     }
     
@@ -126,7 +96,12 @@ class GameScene: SKScene {
     func levelCompleted() {
         // Display a victory message
         victoryLabel?.run(SKAction.fadeIn(withDuration: 1))
-        
+        self.clock?.stopCountdown()
+//        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadNextLevel), userInfo: nil, repeats: false)
+        self.loadNextLevel()
+    }
+    
+    @objc func loadNextLevel() {
         // Load next level
         let gameViewController = self.view?.window?.rootViewController as! GameViewController
         gameViewController.loadNextLevel()
@@ -135,33 +110,79 @@ class GameScene: SKScene {
     @objc func terminateLevel() {
         gameStarted = false
         movingSquare = false
-        squareNode?.position = startingPosition!
+        playerSquare?.position = startingPosition!
         self.clock?.stopCountdown()
     }
     
     func didCollisionOccur() -> Bool {
         for obsticle in obsticles {
-            if obsticle.intersects(squareNode!) {
+            if obsticle.intersects(playerSquare!) {
                 return true
             }
+            
+            for movingObsticle in movingObsticles {
+                movingObsticle.intersects(obsticle)
+                if movingObsticle.intersects(playerSquare!) {
+                    return true
+                }
+            }
         }
-        
         return false
     }
     
     func didPassFinishLine() {
-        if (squareNode?.intersects(finishPosition!))! {
+        if (playerSquare?.intersects(finishPosition!))! {
             levelCompleted()
         }
+    }
+    
+    func storeObsticles() {
+        let obsticleNodes = self.children.filter({ (node) -> Bool in
+            return node.name == "SKSpriteNode"
+        })
+        
+        for obsticle in obsticleNodes {
+            obsticles.append(obsticle as! SKSpriteNode)
+        }
+    }
+    
+    func storeMovingObsticles() {
+        let movingObsticleNodes = self.children.filter({ (node) -> Bool in
+            return node.name == "movingObsticle"
+        })
+        
+        for obsticle in movingObsticleNodes {
+            let movingObsticle = MovingObsticle.init(rect: obsticle.frame)
+            movingObsticle.fillColor = UIColor.red
+            movingObsticles.append(movingObsticle)
+            self.addChild(movingObsticle)
+            
+            obsticle.removeFromParent()
+        }
+    }
+    
+    func createPlayer() {
+        // Set start position
+        if let startPosition = self.childNode(withName: "startPosition") as! SKSpriteNode? {
+            // Let the starting position be determined by the sks file
+            self.startingPosition = startPosition.position
+            startPosition.removeFromParent()
+        }
+        
+        let rect = CGRect.init(x: 0, y: 0, width: squareSize!, height: squareSize!)
+        self.playerSquare = SKShapeNode.init(rect: rect)
+        if let squareNode = self.playerSquare {
+            squareNode.name = "player"
+            squareNode.position = startingPosition!
+            squareNode.fillColor = UIColor.blue
+        }
+        
+        self.addChild(playerSquare!)
     }
     
     // MARK: Class functions
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let label = self.label {
-//            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-//        }
-        
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
 
@@ -184,18 +205,17 @@ class GameScene: SKScene {
         if didCollisionOccur() {
             terminateLevel()
         }
-
+        
+        for movingObsticle in movingObsticles {
+            movingObsticle.takeStep()
+        }
     }
 }
 
 extension CGPoint {
-    
     func isInsideSquare(other: CGPoint, size: CGFloat) -> Bool {
-        
         let horizontal = self.x > other.x && self.x < other.x + size
         let vertical = self.y > other.y && self.y < other.y + size
-        
         return horizontal && vertical
     }
-    
 }

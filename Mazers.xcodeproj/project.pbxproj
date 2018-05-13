@@ -11,6 +11,7 @@
 		E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CE91FB76B8E00A60E62 /* Level99.sks */; };
 		E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CEB1FB76C6500A60E62 /* Level4.sks */; };
 		E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CED1FB776DB00A60E62 /* Level5.sks */; };
+		E16B430420A8994500B6C5D3 /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = E16B430320A8994500B6C5D3 /* Level6.sks */; };
 		E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1729B2B1FB7646C004AB358 /* Level3.sks */; };
 		E1F5F09B1FB3AAF80064FDCF /* metalTest.metal in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09A1FB3AAF80064FDCF /* metalTest.metal */; };
 		E1F5F09D1FB3AD9D0064FDCF /* Obsticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09C1FB3AD9D0064FDCF /* Obsticle.swift */; };
@@ -51,6 +52,7 @@
 		E1667CE91FB76B8E00A60E62 /* Level99.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level99.sks; sourceTree = "<group>"; };
 		E1667CEB1FB76C6500A60E62 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
 		E1667CED1FB776DB00A60E62 /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		E16B430320A8994500B6C5D3 /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
 		E1729B2B1FB7646C004AB358 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		E1F5F09A1FB3AAF80064FDCF /* metalTest.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = metalTest.metal; sourceTree = "<group>"; };
 		E1F5F09C1FB3AD9D0064FDCF /* Obsticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obsticle.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */,
 				E1667CE91FB76B8E00A60E62 /* Level99.sks */,
+				E16B430320A8994500B6C5D3 /* Level6.sks */,
 				E1667CED1FB776DB00A60E62 /* Level5.sks */,
 				E1667CEB1FB76C6500A60E62 /* Level4.sks */,
 				E1729B2B1FB7646C004AB358 /* Level3.sks */,
@@ -277,6 +280,7 @@
 				E1F6B2C51FA9261700BCB464 /* Assets.xcassets in Resources */,
 				E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */,
 				E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */,
+				E16B430420A8994500B6C5D3 /* Level6.sks in Resources */,
 				E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */,
 				E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */,
 				E1F6B2C81FA9261700BCB464 /* LaunchScreen.storyboard in Resources */,
@@ -481,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9L559MT2U;
 				INFOPLIST_FILE = Mazers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jan-Inc..Mazers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -497,7 +501,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q9L559MT2U;
 				INFOPLIST_FILE = Mazers/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Jan-Inc..Mazers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
