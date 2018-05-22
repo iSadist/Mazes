@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E127AFF020B48040007C4BCE /* Level9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E127AFEF20B48040007C4BCE /* Level9.sks */; };
 		E145151B1FAA5D2C0072F1D8 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E145151A1FAA5D2C0072F1D8 /* Level1.sks */; };
+		E14C4B0920B3F4CB00F09D10 /* Level7.sks in Resources */ = {isa = PBXBuildFile; fileRef = E14C4B0820B3F4CB00F09D10 /* Level7.sks */; };
+		E14C4B0B20B3F98200F09D10 /* Level8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E14C4B0A20B3F98200F09D10 /* Level8.sks */; };
 		E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CE91FB76B8E00A60E62 /* Level99.sks */; };
 		E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CEB1FB76C6500A60E62 /* Level4.sks */; };
 		E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CED1FB776DB00A60E62 /* Level5.sks */; };
@@ -48,7 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E127AFEF20B48040007C4BCE /* Level9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9.sks; sourceTree = "<group>"; };
 		E145151A1FAA5D2C0072F1D8 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		E14C4B0820B3F4CB00F09D10 /* Level7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level7.sks; sourceTree = "<group>"; };
+		E14C4B0A20B3F98200F09D10 /* Level8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level8.sks; sourceTree = "<group>"; };
 		E1667CE91FB76B8E00A60E62 /* Level99.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level99.sks; sourceTree = "<group>"; };
 		E1667CEB1FB76C6500A60E62 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
 		E1667CED1FB776DB00A60E62 /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
@@ -127,6 +133,9 @@
 			children = (
 				E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */,
 				E1667CE91FB76B8E00A60E62 /* Level99.sks */,
+				E127AFEF20B48040007C4BCE /* Level9.sks */,
+				E14C4B0A20B3F98200F09D10 /* Level8.sks */,
+				E14C4B0820B3F4CB00F09D10 /* Level7.sks */,
 				E16B430320A8994500B6C5D3 /* Level6.sks */,
 				E1667CED1FB776DB00A60E62 /* Level5.sks */,
 				E1667CEB1FB76C6500A60E62 /* Level4.sks */,
@@ -281,9 +290,12 @@
 				E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */,
 				E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */,
 				E16B430420A8994500B6C5D3 /* Level6.sks in Resources */,
+				E14C4B0B20B3F98200F09D10 /* Level8.sks in Resources */,
 				E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */,
+				E14C4B0920B3F4CB00F09D10 /* Level7.sks in Resources */,
 				E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */,
 				E1F6B2C81FA9261700BCB464 /* LaunchScreen.storyboard in Resources */,
+				E127AFF020B48040007C4BCE /* Level9.sks in Resources */,
 				E1F6B2BC1FA9261700BCB464 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
