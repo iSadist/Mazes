@@ -103,8 +103,9 @@ class GameScene: SKScene {
     
     @objc func loadNextLevel() {
         // Load next level
-        let gameViewController = self.view?.window?.rootViewController as! GameViewController
-        gameViewController.loadNextLevel()
+        let startGameViewController = self.view?.window?.rootViewController as! StartScreenViewController
+        let gameViewController = startGameViewController.gameVC
+        gameViewController?.loadNextLevel()
     }
 
     @objc func terminateLevel() {

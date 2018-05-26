@@ -9,12 +9,20 @@ class GameViewController: UIViewController {
     private var gameView: SKView?
     private var nextLevel: Int = 1
 
+    var startLevel: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             gameView = view
-            self.loadNextLevel()
+            
+            if (startLevel != nil) {
+                self.loadLevel(name: startLevel!)
+            } else {
+                self.loadNextLevel()
+            }
+            
             
             view.ignoresSiblingOrder = true
             
