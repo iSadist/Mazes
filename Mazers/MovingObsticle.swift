@@ -35,7 +35,6 @@ class MovingObsticle: SKShapeNode {
         if node.intersects(self) {
             switch node.name {
               case "player":
-                print("Intersected player")
                 return true
               case "SKSpriteNode":
                 self.reverseDirection()
@@ -49,7 +48,6 @@ class MovingObsticle: SKShapeNode {
     }
     
     func reverseDirection() {
-        print("Reversing direction")
         direction.dx = -direction.dx
         direction.dy = -direction.dy
     }

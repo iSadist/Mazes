@@ -19,11 +19,10 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         finishPosition = self.childNode(withName: "finishPosition") as! SKSpriteNode?
-        //      Get label node from scene and store it for use later
+        // Get label node from scene and store it for use later
         victoryLabel = self.childNode(withName: "victoryLabel") as? SKLabelNode
         if let label = self.victoryLabel {
             label.alpha = 0.0
-            //            label.run(SKAction.fadeIn(withDuration: 2.0))
         }
         
         // Create shape node to use during mouse interaction
@@ -97,15 +96,23 @@ class GameScene: SKScene {
         // Display a victory message
         victoryLabel?.run(SKAction.fadeIn(withDuration: 1))
         self.clock?.stopCountdown()
-//        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadNextLevel), userInfo: nil, repeats: false)
         self.loadNextLevel()
     }
     
     @objc func loadNextLevel() {
         // Load next level
-        let startGameViewController = self.view?.window?.rootViewController as! StartScreenViewController
-        let gameViewController = startGameViewController.gameVC
-        gameViewController?.loadNextLevel()
+        if let startScreenVC = self.view?.window?.rootViewController as? StartScreenViewController {
+            
+            if let gameVC = startScreenVC.nextVC as? GameViewController {
+                gameVC.loadNextLevel()
+            }
+            
+            if let levelChooserVC = startScreenVC.nextVC as? LevelChooserViewController {
+                // Perform unwind segue
+                levelChooserVC.gameVC?.performSegue(withIdentifier: "unwindToStart", sender: nil)
+            }
+        }
+
     }
 
     @objc func terminateLevel() {

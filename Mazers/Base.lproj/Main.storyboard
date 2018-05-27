@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,8 +21,12 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <segue destination="geB-Wo-sKp" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStartWithSegue:" id="qZO-Nb-RJ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <exit id="geB-Wo-sKp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="513" y="134"/>
         </scene>
@@ -34,8 +39,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mazer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8g-dq-hZg">
-                                <rect key="frame" x="163" y="20" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="126" y="20" width="123.5" height="102"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -43,15 +48,14 @@
                                 <rect key="frame" x="133" y="328.5" width="109" height="30"/>
                                 <state key="normal" title="Start new game"/>
                                 <connections>
-                                    <action selector="startNewGameButtonPressed:" destination="Xji-YW-yCh" eventType="touchUpInside" id="70P-5L-9lL"/>
-                                    <segue destination="BV1-FR-VrT" kind="showDetail" identifier="segueToGameView" animates="NO" id="d5q-wP-Rli"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" animates="NO" id="IoM-V3-mby"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gg2-bc-ecQ">
-                                <rect key="frame" x="143" y="360" width="88" height="30"/>
+                                <rect key="frame" x="143" y="366.5" width="88" height="30"/>
                                 <state key="normal" title="Choose level"/>
                                 <connections>
-                                    <segue destination="B4y-xj-cyD" kind="show" identifier="segueToChooseLevel" animates="NO" id="esn-nH-Lpz"/>
+                                    <segue destination="B4y-xj-cyD" kind="show" identifier="segueToChooseLevel" id="esn-nH-Lpz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,14 +66,14 @@
                             <constraint firstItem="0fQ-WI-ffQ" firstAttribute="centerX" secondItem="DFe-Uu-LnQ" secondAttribute="centerX" id="TCT-BQ-0nv"/>
                             <constraint firstItem="j8g-dq-hZg" firstAttribute="top" secondItem="DFe-Uu-LnQ" secondAttribute="top" id="TK7-8o-Agf"/>
                             <constraint firstItem="j8g-dq-hZg" firstAttribute="centerX" secondItem="DFe-Uu-LnQ" secondAttribute="centerX" id="fz7-4T-1g9"/>
-                            <constraint firstItem="Gg2-bc-ecQ" firstAttribute="top" secondItem="0fQ-WI-ffQ" secondAttribute="bottom" constant="1.5" id="wtW-gc-B1C"/>
+                            <constraint firstItem="Gg2-bc-ecQ" firstAttribute="top" secondItem="0fQ-WI-ffQ" secondAttribute="bottom" constant="8" symbolic="YES" id="wtW-gc-B1C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFe-Uu-LnQ"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLS-d1-tB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410" y="134"/>
+            <point key="canvasLocation" x="-410.39999999999998" y="133.5832083958021"/>
         </scene>
         <!--Level Chooser View Controller-->
         <scene sceneID="srH-tJ-9gq">
@@ -80,97 +84,106 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVZ-Oc-sIR">
-                                <rect key="frame" x="127.5" y="30" width="120" height="30"/>
+                                <rect key="frame" x="127.5" y="90" width="120" height="30"/>
                                 <state key="normal" title="Level2"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="uup-LN-IX7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6U-3r-jtu">
-                                <rect key="frame" x="255.5" y="30" width="119.5" height="30"/>
+                                <rect key="frame" x="255.5" y="90" width="119.5" height="30"/>
                                 <state key="normal" title="Level3"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="T8n-gI-Oyb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-ax-8ka">
-                                <rect key="frame" x="0.0" y="30" width="119.5" height="30"/>
+                                <rect key="frame" x="0.0" y="90" width="119.5" height="30"/>
                                 <state key="normal" title="Level1"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="e3x-g8-pH3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRP-zE-FBL">
-                                <rect key="frame" x="127.5" y="68" width="120" height="30"/>
+                                <rect key="frame" x="127.5" y="150" width="120" height="30"/>
                                 <state key="normal" title="Level5"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="Px7-v8-1yX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8y-QR-tZh">
-                                <rect key="frame" x="255.5" y="68" width="119.5" height="30"/>
+                                <rect key="frame" x="255.5" y="150" width="119.5" height="30"/>
                                 <state key="normal" title="Level6"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="2hd-Bz-4zP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrd-ae-vAn">
-                                <rect key="frame" x="0.0" y="68" width="119.5" height="30"/>
+                                <rect key="frame" x="0.0" y="150" width="119.5" height="30"/>
                                 <state key="normal" title="Level4"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="uZR-OT-Nxl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4B-Ng-1c3">
-                                <rect key="frame" x="127" y="106" width="120" height="30"/>
+                                <rect key="frame" x="127" y="210" width="120" height="30"/>
                                 <state key="normal" title="Level8"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="fgg-10-T1O"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZl-7h-5DE">
-                                <rect key="frame" x="255" y="106" width="120" height="30"/>
+                                <rect key="frame" x="255" y="210" width="120" height="30"/>
                                 <state key="normal" title="Level9"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="DyE-qY-Eit"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="El3-05-Ki0">
-                                <rect key="frame" x="0.0" y="106" width="120" height="30"/>
+                                <rect key="frame" x="0.0" y="210" width="120" height="30"/>
                                 <state key="normal" title="Level7"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="B4y-xj-cyD" eventType="touchUpInside" id="iLv-yq-Ddu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaE-Ll-jRd">
+                                <rect key="frame" x="170" y="617" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Riz-Nr-epQ" kind="unwind" identifier="unwindToStart" unwindAction="unwindToStartWithSegue:" id="oqS-o6-T2R"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fRP-zE-FBL" firstAttribute="leading" secondItem="Nrd-ae-vAn" secondAttribute="trailing" constant="8" symbolic="YES" id="031-Cw-GpN"/>
-                            <constraint firstItem="OZl-7h-5DE" firstAttribute="top" secondItem="E8y-QR-tZh" secondAttribute="bottom" constant="8" id="1qc-d3-zj1"/>
+                            <constraint firstItem="OZl-7h-5DE" firstAttribute="top" secondItem="E8y-QR-tZh" secondAttribute="bottom" constant="30" id="1qc-d3-zj1"/>
                             <constraint firstItem="E8y-QR-tZh" firstAttribute="leading" secondItem="fRP-zE-FBL" secondAttribute="trailing" constant="8" id="22P-dZ-nEt"/>
-                            <constraint firstItem="b6U-3r-jtu" firstAttribute="top" secondItem="55F-c0-Xmg" secondAttribute="top" constant="10" id="2F5-yY-IHY"/>
-                            <constraint firstItem="El3-05-Ki0" firstAttribute="top" secondItem="Nrd-ae-vAn" secondAttribute="bottom" constant="8" id="2uj-xP-YLk"/>
+                            <constraint firstItem="b6U-3r-jtu" firstAttribute="top" secondItem="55F-c0-Xmg" secondAttribute="top" multiplier="4" constant="10" id="2F5-yY-IHY"/>
+                            <constraint firstItem="El3-05-Ki0" firstAttribute="top" secondItem="Nrd-ae-vAn" secondAttribute="bottom" constant="30" id="2uj-xP-YLk"/>
                             <constraint firstItem="55F-c0-Xmg" firstAttribute="trailing" secondItem="b6U-3r-jtu" secondAttribute="trailing" id="3Bg-85-oQ1"/>
                             <constraint firstItem="b6U-3r-jtu" firstAttribute="leading" secondItem="RVZ-Oc-sIR" secondAttribute="trailing" constant="8" symbolic="YES" id="78Z-c4-cxr"/>
+                            <constraint firstItem="eaE-Ll-jRd" firstAttribute="centerX" secondItem="55F-c0-Xmg" secondAttribute="centerX" id="8Bm-9p-AuO"/>
                             <constraint firstItem="D4B-Ng-1c3" firstAttribute="leading" secondItem="El3-05-Ki0" secondAttribute="trailing" constant="7" id="AfX-LQ-adD"/>
-                            <constraint firstItem="E8y-QR-tZh" firstAttribute="top" secondItem="b6U-3r-jtu" secondAttribute="bottom" constant="8" id="C5e-KU-01T"/>
+                            <constraint firstItem="E8y-QR-tZh" firstAttribute="top" secondItem="b6U-3r-jtu" secondAttribute="bottom" constant="30" id="C5e-KU-01T"/>
                             <constraint firstItem="OZl-7h-5DE" firstAttribute="leading" secondItem="D4B-Ng-1c3" secondAttribute="trailing" constant="8" id="FJp-0X-8df"/>
                             <constraint firstItem="D4B-Ng-1c3" firstAttribute="width" secondItem="El3-05-Ki0" secondAttribute="width" id="GBH-ot-BOz"/>
                             <constraint firstItem="RVZ-Oc-sIR" firstAttribute="width" secondItem="Qda-ax-8ka" secondAttribute="width" id="I0k-Ic-61K"/>
                             <constraint firstItem="E8y-QR-tZh" firstAttribute="width" secondItem="Nrd-ae-vAn" secondAttribute="width" id="IcR-9O-pfg"/>
                             <constraint firstItem="OZl-7h-5DE" firstAttribute="width" secondItem="El3-05-Ki0" secondAttribute="width" id="J6b-Aq-Rvv"/>
-                            <constraint firstItem="Nrd-ae-vAn" firstAttribute="top" secondItem="Qda-ax-8ka" secondAttribute="bottom" constant="8" id="S2e-oJ-E6L"/>
-                            <constraint firstItem="D4B-Ng-1c3" firstAttribute="top" secondItem="fRP-zE-FBL" secondAttribute="bottom" constant="8" id="UoR-NC-wLp"/>
+                            <constraint firstItem="Nrd-ae-vAn" firstAttribute="top" secondItem="Qda-ax-8ka" secondAttribute="bottom" constant="30" id="S2e-oJ-E6L"/>
+                            <constraint firstItem="D4B-Ng-1c3" firstAttribute="top" secondItem="fRP-zE-FBL" secondAttribute="bottom" constant="30" id="UoR-NC-wLp"/>
                             <constraint firstItem="55F-c0-Xmg" firstAttribute="trailing" secondItem="OZl-7h-5DE" secondAttribute="trailing" id="V9A-HE-ruq"/>
-                            <constraint firstItem="RVZ-Oc-sIR" firstAttribute="top" secondItem="55F-c0-Xmg" secondAttribute="top" constant="10" id="Zfc-47-jUX"/>
+                            <constraint firstItem="RVZ-Oc-sIR" firstAttribute="top" secondItem="55F-c0-Xmg" secondAttribute="top" multiplier="4" constant="10" id="Zfc-47-jUX"/>
                             <constraint firstItem="fRP-zE-FBL" firstAttribute="width" secondItem="Nrd-ae-vAn" secondAttribute="width" id="b9c-Hy-18m"/>
                             <constraint firstItem="RVZ-Oc-sIR" firstAttribute="leading" secondItem="Qda-ax-8ka" secondAttribute="trailing" constant="8" symbolic="YES" id="ccS-Td-dv1"/>
                             <constraint firstItem="55F-c0-Xmg" firstAttribute="trailing" secondItem="E8y-QR-tZh" secondAttribute="trailing" id="cvH-rL-ezH"/>
-                            <constraint firstItem="Qda-ax-8ka" firstAttribute="top" secondItem="55F-c0-Xmg" secondAttribute="top" constant="10" id="gdJ-Mh-Qll"/>
+                            <constraint firstItem="Qda-ax-8ka" firstAttribute="top" secondItem="55F-c0-Xmg" secondAttribute="top" multiplier="4" constant="10" id="gdJ-Mh-Qll"/>
                             <constraint firstItem="Qda-ax-8ka" firstAttribute="leading" secondItem="55F-c0-Xmg" secondAttribute="leading" id="grJ-0k-hdk"/>
                             <constraint firstItem="Nrd-ae-vAn" firstAttribute="leading" secondItem="55F-c0-Xmg" secondAttribute="leading" id="iTB-qu-pzt"/>
                             <constraint firstItem="El3-05-Ki0" firstAttribute="leading" secondItem="55F-c0-Xmg" secondAttribute="leading" id="s88-VS-XqV"/>
-                            <constraint firstItem="fRP-zE-FBL" firstAttribute="top" secondItem="RVZ-Oc-sIR" secondAttribute="bottom" constant="8" id="xPd-14-efv"/>
+                            <constraint firstItem="55F-c0-Xmg" firstAttribute="bottom" secondItem="eaE-Ll-jRd" secondAttribute="bottom" constant="20" id="sSv-bA-3jP"/>
+                            <constraint firstItem="fRP-zE-FBL" firstAttribute="top" secondItem="RVZ-Oc-sIR" secondAttribute="bottom" constant="30" id="xPd-14-efv"/>
                             <constraint firstItem="b6U-3r-jtu" firstAttribute="width" secondItem="Qda-ax-8ka" secondAttribute="width" id="yrn-fj-8Eb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="55F-c0-Xmg"/>
@@ -180,11 +193,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uv0-ol-kSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Riz-Nr-epQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-410.39999999999998" y="941.37931034482767"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mqn-2W-m0w"/>
+        <segue reference="IoM-V3-mby"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ import GameKit
 class LevelChooserViewController: UIViewController {
     
     var chosenLevel: String = ""
+    var gameVC: GameViewController? = nil
     
     override var shouldAutorotate: Bool {
         return false
@@ -29,9 +30,16 @@ class LevelChooserViewController: UIViewController {
         performSegue(withIdentifier: "segueToGameView", sender: self)
     }
     
+    // MARK: Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gameViewController = segue.destination as? GameViewController {
-            gameViewController.startLevel = chosenLevel
+            gameViewController.startLevel = Int(chosenLevel.dropFirst(5))
+            gameVC = gameViewController
         }
+    }
+    
+    @IBAction func unwindToLevelChooser(segue: UIStoryboardSegue) {
+        print("Unwind segue to level chooser")
     }
 }

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,19 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello and welcome to my game! I hope you will enjoy playing it as much as I enjoyed making it. // Jan" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8sw-ea-hgL">
-                                <rect key="frame" x="16" y="300" width="343" height="67"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MazerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="BZI-7H-Zm8">
+                                <rect key="frame" x="117" y="273" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="Rpw-lM-ZXD"/>
+                                    <constraint firstAttribute="width" constant="140" id="cKS-0S-MUR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Mazer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoP-4l-96u">
+                                <rect key="frame" x="116" y="421" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.31230098010000001" green="0.96592926980000005" blue="0.99896889929999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.79205966157218732" green="0.92333927295586549" blue="0.99896889929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8sw-ea-hgL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="ctN-m6-hY9"/>
-                            <constraint firstItem="8sw-ea-hgL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lKe-PP-z7g"/>
-                            <constraint firstItem="8sw-ea-hgL" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="sMB-kC-KFx"/>
-                            <constraint firstItem="8sw-ea-hgL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="280" id="z97-6d-Flj"/>
+                            <constraint firstItem="BZI-7H-Zm8" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="OHU-ln-99K"/>
+                            <constraint firstItem="XoP-4l-96u" firstAttribute="top" secondItem="BZI-7H-Zm8" secondAttribute="bottom" constant="8" id="Oyt-Z8-cK9"/>
+                            <constraint firstItem="XoP-4l-96u" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mn4-Va-n12"/>
+                            <constraint firstItem="BZI-7H-Zm8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wvA-jd-kNf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -41,4 +47,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MazerIcon" width="60" height="60"/>
+    </resources>
 </document>

@@ -9,16 +9,23 @@ class GameViewController: UIViewController {
     private var gameView: SKView?
     private var nextLevel: Int = 1
 
-    var startLevel: String?
+    var startLevel: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("GameViewController started...")
         
         if let view = self.view as! SKView? {
             gameView = view
             
             if (startLevel != nil) {
-                self.loadLevel(name: startLevel!)
+                nextLevel = startLevel! + 1
+                
+                var levelName = "Level"
+                levelName.append(String(startLevel!))
+                
+                _ = self.loadLevel(name: levelName)
             } else {
                 self.loadNextLevel()
             }

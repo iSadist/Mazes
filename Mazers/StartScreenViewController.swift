@@ -10,8 +10,8 @@ import UIKit
 import GameKit
 
 class StartScreenViewController: UIViewController {
-    
-    var gameVC: GameViewController? = nil
+
+    var nextVC: UIViewController? = nil
     
     override var shouldAutorotate: Bool {
         return false
@@ -23,13 +23,17 @@ class StartScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         print("Loaded Start Screen")
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let gameViewController = segue.destination as? GameViewController {
-            gameVC = gameViewController
-        }
-    }
+    }    
     
     // MARK: UI Functions
+    
+    // MARK: Segue
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        nextVC = segue.destination
+    }
+    
+    @IBAction func unwindToStart(segue: UIStoryboardSegue) {
+        print("Unwind segue to start")
+    }
 }
