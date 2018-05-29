@@ -14,7 +14,7 @@ class GameScene: SKScene {
     private var obsticles : [SKSpriteNode] = []
     private var movingObsticles : [MovingObsticle] = []
     private var gameStarted = false
-    private var timeLimit = 100
+    private var timeLimit = 300
     private var clock: Clock?
     
     override func didMove(to view: SKView) {
