@@ -31,6 +31,10 @@ class MovingObsticle: SKShapeNode {
         // Prevent the square from going outside the screen
     }
     
+    func setDirection (direction: CGVector) {
+        self.direction = direction
+    }
+    
     override func intersects(_ node: SKNode) -> Bool {
         if node.intersects(self) {
             switch node.name {

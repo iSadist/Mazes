@@ -13,6 +13,7 @@ class GameScene: SKScene {
     private var movingSquare : Bool = false
     private var obsticles : [SKSpriteNode] = []
     private var movingObsticles : [MovingObsticle] = []
+    private var verticalMovingObsticles : [MovingObsticle] = []
     private var gameStarted = false
     private var timeLimit = 300
     private var clock: Clock?
@@ -44,6 +45,7 @@ class GameScene: SKScene {
         
         self.storeObsticles()
         self.storeMovingObsticles()
+        self.storeVerticalMovingObsticles()
         
         self.createPlayer()
     }
@@ -134,6 +136,13 @@ class GameScene: SKScene {
                     return true
                 }
             }
+            
+            for movingObsticle in verticalMovingObsticles {
+                movingObsticle.intersects(obsticle)
+                if movingObsticle.intersects(playerSquare!) {
+                    return true
+                }
+            }
         }
         return false
     }
@@ -161,8 +170,26 @@ class GameScene: SKScene {
         
         for obsticle in movingObsticleNodes {
             let movingObsticle = MovingObsticle.init(rect: obsticle.frame)
-            movingObsticle.fillColor = UIColor.red
+            movingObsticle.fillColor = UIColor.black
             movingObsticles.append(movingObsticle)
+            self.addChild(movingObsticle)
+            
+            obsticle.removeFromParent()
+        }
+    }
+    
+    func storeVerticalMovingObsticles() {
+        let verticalMovingObsticleNodes = self.children.filter({ (node) -> Bool in
+            return node.name == "verticalMovingObsticle"
+        })
+        
+        for obsticle in verticalMovingObsticleNodes {
+            let movingObsticle = MovingObsticle.init(rect: obsticle.frame)
+            movingObsticle.fillColor = UIColor.white
+            
+            var direction = CGVector.init(dx: 0, dy: 3)
+            movingObsticle.setDirection(direction: direction)
+            verticalMovingObsticles.append(movingObsticle)
             self.addChild(movingObsticle)
             
             obsticle.removeFromParent()
@@ -215,6 +242,10 @@ class GameScene: SKScene {
         }
         
         for movingObsticle in movingObsticles {
+            movingObsticle.takeStep()
+        }
+        
+        for movingObsticle in verticalMovingObsticles {
             movingObsticle.takeStep()
         }
     }

@@ -49,6 +49,7 @@ class GameViewController: UIViewController {
     }
     
     func loadNextLevel() {
+        print("Loading next level")
         let levelName = "Level" + String(nextLevel)
         _ = loadLevel(name: levelName)
         nextLevel += 1

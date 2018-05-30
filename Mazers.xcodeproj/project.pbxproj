@@ -18,6 +18,7 @@
 		E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CED1FB776DB00A60E62 /* Level5.sks */; };
 		E16B430420A8994500B6C5D3 /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = E16B430320A8994500B6C5D3 /* Level6.sks */; };
 		E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1729B2B1FB7646C004AB358 /* Level3.sks */; };
+		E1CCA53720BD2E3500377E4A /* Level10.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1CCA53620BD2E3500377E4A /* Level10.sks */; };
 		E1F5F09F1FB3ADAF0064FDCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09E1FB3ADAF0064FDCF /* Player.swift */; };
 		E1F5F0A11FB3ADC00064FDCF /* MovingObsticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */; };
 		E1F5F0A31FB3ADCE0064FDCF /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */; };
@@ -62,6 +63,7 @@
 		E1667CED1FB776DB00A60E62 /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
 		E16B430320A8994500B6C5D3 /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
 		E1729B2B1FB7646C004AB358 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		E1CCA53620BD2E3500377E4A /* Level10.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level10.sks; sourceTree = "<group>"; };
 		E1F5F09E1FB3ADAF0064FDCF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingObsticle.swift; sourceTree = "<group>"; };
 		E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */,
 				E1667CE91FB76B8E00A60E62 /* Level99.sks */,
+				E1CCA53620BD2E3500377E4A /* Level10.sks */,
 				E127AFEF20B48040007C4BCE /* Level9.sks */,
 				E14C4B0A20B3F98200F09D10 /* Level8.sks */,
 				E14C4B0820B3F4CB00F09D10 /* Level7.sks */,
@@ -292,6 +295,7 @@
 				E16B430420A8994500B6C5D3 /* Level6.sks in Resources */,
 				E14C4B0B20B3F98200F09D10 /* Level8.sks in Resources */,
 				E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */,
+				E1CCA53720BD2E3500377E4A /* Level10.sks in Resources */,
 				E14C4B0920B3F4CB00F09D10 /* Level7.sks in Resources */,
 				E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */,
 				E1F6B2C81FA9261700BCB464 /* LaunchScreen.storyboard in Resources */,
