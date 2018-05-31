@@ -3,6 +3,7 @@ import SpriteKit
 import GameplayKit
 
 let debugMode = true
+let TOTAL_LEVELS = 10
 
 class GameViewController: UIViewController {
     
@@ -50,7 +51,7 @@ class GameViewController: UIViewController {
     
     func loadNextLevel() {
         
-        if nextLevel > 10 {
+        if nextLevel > TOTAL_LEVELS {
             performSegue(withIdentifier: "unwindToStart", sender: self)
         }
         
