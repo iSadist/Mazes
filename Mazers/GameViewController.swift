@@ -49,7 +49,11 @@ class GameViewController: UIViewController {
     }
     
     func loadNextLevel() {
-        print("Loading next level")
+        
+        if nextLevel > 10 {
+            performSegue(withIdentifier: "unwindToStart", sender: self)
+        }
+        
         let levelName = "Level" + String(nextLevel)
         _ = loadLevel(name: levelName)
         nextLevel += 1

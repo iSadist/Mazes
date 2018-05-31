@@ -2,6 +2,8 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+import AudioToolbox.AudioServices // For vibration
+
 class GameScene: SKScene {
     
     private var victoryLabel : SKLabelNode?
@@ -102,6 +104,7 @@ class GameScene: SKScene {
     }
     
     @objc func loadNextLevel() {
+        
         // Load next level
         if let startScreenVC = self.view?.window?.rootViewController as? StartScreenViewController {
             
@@ -118,6 +121,8 @@ class GameScene: SKScene {
     }
 
     @objc func terminateLevel() {
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate) // Vibrate the phone
+        
         gameStarted = false
         movingSquare = false
         playerSquare?.position = startingPosition!
