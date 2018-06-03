@@ -7,6 +7,7 @@ import AudioToolbox.AudioServices // For vibration
 class GameScene: SKScene {
     
     private var victoryLabel : SKLabelNode?
+    private var startMessage: SKLabelNode?
     private var spinnyNode : SKShapeNode?
     private var playerSquare : Player?
     private var startingPosition : CGPoint?
@@ -22,8 +23,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         finishPosition = self.childNode(withName: "finishPosition") as! SKSpriteNode?
-        // Get label node from scene and store it for use later
+        startMessage = self.childNode(withName: "startMessage") as? SKLabelNode
         victoryLabel = self.childNode(withName: "victoryLabel") as? SKLabelNode
+        
         if let label = self.victoryLabel {
             label.alpha = 0.0
         }
@@ -100,15 +102,15 @@ class GameScene: SKScene {
             self.clock = clock
         }
         
+        startMessage?.run(SKAction.fadeOut(withDuration: 1.0))
         playerSquare?.startGyros()
     }
     
     func levelCompleted() {
         // Display a victory message
-        victoryLabel?.run(SKAction.fadeIn(withDuration: 1))
-        self.clock?.stopCountdown()
+        self.resetLevel()
+        victoryLabel?.run(SKAction.fadeIn(withDuration: 1.0))
         self.loadNextLevel()
-        self.playerSquare?.stopGyro()
     }
     
     @objc func loadNextLevel() {
@@ -125,15 +127,18 @@ class GameScene: SKScene {
                 levelChooserVC.gameVC?.performSegue(withIdentifier: "unwindToStart", sender: nil)
             }
         }
-
     }
 
     @objc func terminateLevel() {
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate) // Vibrate the phone
-        
+        playerSquare?.position = startingPosition!
+        startMessage?.run(SKAction.fadeIn(withDuration: 1.0))
+        self.resetLevel()
+    }
+    
+    func resetLevel() {
         gameStarted = false
         movingSquare = false
-        playerSquare?.position = startingPosition!
         playerSquare?.stopGyro()
         self.clock?.stopCountdown()
     }
