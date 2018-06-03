@@ -14,38 +14,48 @@ typealias MethodHandler = ()  -> Void
 
 class Clock {
 
-    private var currentTime: Int
-    private var startTime: Int
+    private var currentTime: Float = 0.0
     private var timerStarted: Bool
     private var timeLabel: SKLabelNode?
     private var selector: MethodHandler
     private var timer: Timer?
+    
+    private var timeBefore: DispatchTime?
+    private var timeAfter: DispatchTime?
 
-    init(start: Int, label: SKLabelNode, selector: @escaping MethodHandler) {
-        currentTime = start
-        startTime = start
+    init(label: SKLabelNode, selector: @escaping MethodHandler) {
         timerStarted = false
         timeLabel = label
         self.selector = selector
     }
     
-    func startCountdown() {
+    func start() {
         timerStarted = true
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
+        currentTime = 0.0
+        timeBefore = DispatchTime.now()
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.countUp), userInfo: nil, repeats: true)
     }
     
-    func stopCountdown() {
+    func stop() {
         timer?.invalidate()
-        currentTime = startTime
     }
     
-    @objc func countdown() {
-        currentTime -= 1
-        timeLabel?.text = String(currentTime)
+    func getCurrentTime() -> Float {
+        return currentTime
+    }
+    
+    @objc func countUp() {
+        timeAfter = DispatchTime.now()
         
-        if currentTime == 0 {
+        if timeAfter!.uptimeNanoseconds - timeBefore!.uptimeNanoseconds >= 100000000 {
+            currentTime += 0.1
+            timeLabel?.text = String(currentTime)
+            timeBefore = DispatchTime.now()
+        }
+        
+        if currentTime >= 5000 {
             // Call timerDone function
-            stopCountdown()
+            stop()
             selector()
         }
     }

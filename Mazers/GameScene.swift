@@ -20,6 +20,7 @@ class GameScene: SKScene {
     private var gameStarted = false
     private var timeLimit = 600
     private var clock: Clock?
+    private var finishTime: Float?
     
     private let CONTROL_WITH_TOUCH = false
     
@@ -104,10 +105,10 @@ class GameScene: SKScene {
         
         gameStarted = true
         if let timeLabel = self.childNode(withName: "timerLabel") as! SKLabelNode? {
-            let clock = Clock(start: timeLimit, label: timeLabel, selector: {
+            let clock = Clock(label: timeLabel, selector: {
                 self.terminateLevel()
             })
-            clock.startCountdown()
+            clock.start()
             self.clock = clock
         }
         
@@ -148,8 +149,9 @@ class GameScene: SKScene {
     func resetLevel() {
         gameStarted = false
         movingSquare = false
-        playerSquare?.stopGyro()
-        self.clock?.stopCountdown()
+        playerSquare!.stopGyro()
+        self.clock!.stop()
+        finishTime = self.clock!.getCurrentTime()
     }
     
     func didCollisionOccur() -> Bool {
