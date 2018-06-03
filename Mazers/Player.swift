@@ -72,22 +72,20 @@ class Player: SKShapeNode {
     {
         let newPosition = CGPoint.init(x: position.x + velocity.dx / 4, y: position.y + velocity.dy / 4)
         position = newPosition
-        
-        print(velocity.debugDescription)
     }
     
     // MARK: Touch events
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
-        print("Touched!")
-//        touches.first?.location(in: self)
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
-        print("Moved!")
-//        self.position = (touches.first?.location(in: self))!
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+//    {
+//        print("Touched!")
+////        touches.first?.location(in: self)
+//    }
+//    
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?)
+//    {
+//        print("Moved!")
+////        self.position = (touches.first?.location(in: self))!
+//    }
     
 }

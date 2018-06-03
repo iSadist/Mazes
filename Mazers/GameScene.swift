@@ -21,6 +21,8 @@ class GameScene: SKScene {
     private var timeLimit = 600
     private var clock: Clock?
     
+    private let CONTROL_WITH_TOUCH = false
+    
     override func didMove(to view: SKView) {
         finishPosition = self.childNode(withName: "finishPosition") as! SKSpriteNode?
         startMessage = self.childNode(withName: "startMessage") as? SKLabelNode
@@ -57,33 +59,40 @@ class GameScene: SKScene {
     // MARK: Touch events
     
     func touchDown(atPoint pos : CGPoint) {
-//        if pos.isInsideSquare(other: (playerSquare?.position)!, size: squareSize!) {
-//            movingSquare = true
-//        }
-        self.startTheGame()
+        if CONTROL_WITH_TOUCH {
+            if pos.isInsideSquare(other: (playerSquare?.position)!, size: squareSize!) {
+                movingSquare = true
+            }
+        } else {
+            self.startTheGame()
+        }
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-//        if movingSquare {
-//            if !gameStarted {
-//                startTheGame()
-//            }
-//
-//            // Create a stream after the square
-//            if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//                n.position = pos
-//                n.strokeColor = SKColor.blue
-//                self.addChild(n)
-//            }
-//
-//            // Move the square
-//            let newPoint = CGPoint.init(x: pos.x - squareSize!/2, y: pos.y - squareSize!/2)
-//            playerSquare?.position = newPoint
-//        }
+        if CONTROL_WITH_TOUCH {
+            if movingSquare {
+                if !gameStarted {
+                    startTheGame()
+                }
+                
+                // Create a stream after the square
+                if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+                    n.position = pos
+                    n.strokeColor = SKColor.blue
+                    self.addChild(n)
+                }
+                
+                // Move the square
+                let newPoint = CGPoint.init(x: pos.x - squareSize!/2, y: pos.y - squareSize!/2)
+                playerSquare?.position = newPoint
+            }
+        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
-//        movingSquare = false
+        if CONTROL_WITH_TOUCH {
+            movingSquare = false
+        }
     }
     
     // MARK: Game functions

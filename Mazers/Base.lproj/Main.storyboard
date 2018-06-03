@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartScreen" translatesAutoresizingMaskIntoConstraints="NO" id="6TV-6U-C53">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-30" width="380" height="747"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-WI-ffQ">
                                 <rect key="frame" x="128" y="328" width="119" height="30"/>
@@ -62,14 +62,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6TV-6U-C53" firstAttribute="top" secondItem="DFe-Uu-LnQ" secondAttribute="top" constant="-20" id="5e2-a1-yQc"/>
+                            <constraint firstItem="6TV-6U-C53" firstAttribute="top" secondItem="DFe-Uu-LnQ" secondAttribute="top" constant="-50" id="5e2-a1-yQc"/>
                             <constraint firstItem="6TV-6U-C53" firstAttribute="leading" secondItem="DFe-Uu-LnQ" secondAttribute="leading" id="Cwe-O6-dKF"/>
                             <constraint firstItem="Gg2-bc-ecQ" firstAttribute="centerX" secondItem="DFe-Uu-LnQ" secondAttribute="centerX" id="M5R-I7-KpO"/>
                             <constraint firstItem="0fQ-WI-ffQ" firstAttribute="centerY" secondItem="DFe-Uu-LnQ" secondAttribute="centerY" id="PJL-gg-Gzi"/>
                             <constraint firstItem="0fQ-WI-ffQ" firstAttribute="centerX" secondItem="DFe-Uu-LnQ" secondAttribute="centerX" id="TCT-BQ-0nv"/>
-                            <constraint firstItem="DFe-Uu-LnQ" firstAttribute="bottom" secondItem="6TV-6U-C53" secondAttribute="bottom" id="faq-Cu-Uc7"/>
+                            <constraint firstItem="DFe-Uu-LnQ" firstAttribute="bottom" secondItem="6TV-6U-C53" secondAttribute="bottom" constant="-50" id="faq-Cu-Uc7"/>
                             <constraint firstItem="Gg2-bc-ecQ" firstAttribute="top" secondItem="0fQ-WI-ffQ" secondAttribute="bottom" constant="8" symbolic="YES" id="wtW-gc-B1C"/>
-                            <constraint firstItem="DFe-Uu-LnQ" firstAttribute="trailing" secondItem="6TV-6U-C53" secondAttribute="trailing" id="zs6-Lb-m0V"/>
+                            <constraint firstItem="DFe-Uu-LnQ" firstAttribute="trailing" secondItem="6TV-6U-C53" secondAttribute="trailing" constant="-5" id="zs6-Lb-m0V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DFe-Uu-LnQ"/>
                     </view>
@@ -205,6 +205,6 @@
         <image name="StartScreen" width="376" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IoM-V3-mby"/>
+        <segue reference="mqn-2W-m0w"/>
     </inferredMetricsTieBreakers>
 </document>
