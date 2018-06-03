@@ -110,6 +110,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1B15A3E20C3E59E00211B9C /* SpriteKitScenes */ = {
+			isa = PBXGroup;
+			children = (
+				E1667CE91FB76B8E00A60E62 /* Level99.sks */,
+				E1CCA53620BD2E3500377E4A /* Level10.sks */,
+				E127AFEF20B48040007C4BCE /* Level9.sks */,
+				E14C4B0A20B3F98200F09D10 /* Level8.sks */,
+				E14C4B0820B3F4CB00F09D10 /* Level7.sks */,
+				E16B430320A8994500B6C5D3 /* Level6.sks */,
+				E1667CED1FB776DB00A60E62 /* Level5.sks */,
+				E1667CEB1FB76C6500A60E62 /* Level4.sks */,
+				E1729B2B1FB7646C004AB358 /* Level3.sks */,
+				E1F6B2B91FA9261700BCB464 /* Level2.sks */,
+				E145151A1FAA5D2C0072F1D8 /* Level1.sks */,
+			);
+			path = SpriteKitScenes;
+			sourceTree = "<group>";
+		};
 		E1F6B2AB1FA9261700BCB464 = {
 			isa = PBXGroup;
 			children = (
@@ -133,27 +151,17 @@
 		E1F6B2B61FA9261700BCB464 /* Mazers */ = {
 			isa = PBXGroup;
 			children = (
+				E1B15A3E20C3E59E00211B9C /* SpriteKitScenes */,
+				E1F6B2C41FA9261700BCB464 /* Assets.xcassets */,
+				E1F6B2C11FA9261700BCB464 /* Main.storyboard */,
+				E1F6B2C61FA9261700BCB464 /* LaunchScreen.storyboard */,
+				E1F6B2C91FA9261700BCB464 /* Info.plist */,
 				E1F6B2B71FA9261700BCB464 /* AppDelegate.swift */,
-				E1667CE91FB76B8E00A60E62 /* Level99.sks */,
-				E1CCA53620BD2E3500377E4A /* Level10.sks */,
-				E127AFEF20B48040007C4BCE /* Level9.sks */,
-				E14C4B0A20B3F98200F09D10 /* Level8.sks */,
-				E14C4B0820B3F4CB00F09D10 /* Level7.sks */,
-				E16B430320A8994500B6C5D3 /* Level6.sks */,
-				E1667CED1FB776DB00A60E62 /* Level5.sks */,
-				E1667CEB1FB76C6500A60E62 /* Level4.sks */,
-				E1729B2B1FB7646C004AB358 /* Level3.sks */,
-				E1F6B2B91FA9261700BCB464 /* Level2.sks */,
-				E145151A1FAA5D2C0072F1D8 /* Level1.sks */,
 				E1F6B2BB1FA9261700BCB464 /* Actions.sks */,
 				E1F6B2BD1FA9261700BCB464 /* GameScene.swift */,
 				E1F6B2BF1FA9261700BCB464 /* GameViewController.swift */,
 				E11A564B20B9C7CC0016AEB5 /* StartScreenViewController.swift */,
 				E11A564D20BA09890016AEB5 /* LevelChooserViewController.swift */,
-				E1F6B2C11FA9261700BCB464 /* Main.storyboard */,
-				E1F6B2C41FA9261700BCB464 /* Assets.xcassets */,
-				E1F6B2C61FA9261700BCB464 /* LaunchScreen.storyboard */,
-				E1F6B2C91FA9261700BCB464 /* Info.plist */,
 				E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */,
 				E1F5F09E1FB3ADAF0064FDCF /* Player.swift */,
 				E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */,

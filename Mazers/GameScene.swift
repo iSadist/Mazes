@@ -8,7 +8,7 @@ class GameScene: SKScene {
     
     private var victoryLabel : SKLabelNode?
     private var spinnyNode : SKShapeNode?
-    private var playerSquare : SKShapeNode?
+    private var playerSquare : Player?
     private var startingPosition : CGPoint?
     private var finishPosition : SKSpriteNode?
     private var squareSize : CGFloat?
@@ -17,7 +17,7 @@ class GameScene: SKScene {
     private var movingObsticles : [MovingObsticle] = []
     private var verticalMovingObsticles : [MovingObsticle] = []
     private var gameStarted = false
-    private var timeLimit = 300
+    private var timeLimit = 600
     private var clock: Clock?
     
     override func didMove(to view: SKView) {
@@ -55,37 +55,42 @@ class GameScene: SKScene {
     // MARK: Touch events
     
     func touchDown(atPoint pos : CGPoint) {
-        if pos.isInsideSquare(other: (playerSquare?.position)!, size: squareSize!) {
-            movingSquare = true
-        }
+//        if pos.isInsideSquare(other: (playerSquare?.position)!, size: squareSize!) {
+//            movingSquare = true
+//        }
+        self.startTheGame()
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        if movingSquare {
-            if !gameStarted {
-                startTheGame()
-            }
-            
-            // Create a stream after the square
-            if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-                n.position = pos
-                n.strokeColor = SKColor.blue
-                self.addChild(n)
-            }
-            
-            // Move the square
-            let newPoint = CGPoint.init(x: pos.x - squareSize!/2, y: pos.y - squareSize!/2)
-            playerSquare?.position = newPoint
-        }
+//        if movingSquare {
+//            if !gameStarted {
+//                startTheGame()
+//            }
+//
+//            // Create a stream after the square
+//            if let n = self.spinnyNode?.copy() as! SKShapeNode? {
+//                n.position = pos
+//                n.strokeColor = SKColor.blue
+//                self.addChild(n)
+//            }
+//
+//            // Move the square
+//            let newPoint = CGPoint.init(x: pos.x - squareSize!/2, y: pos.y - squareSize!/2)
+//            playerSquare?.position = newPoint
+//        }
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        movingSquare = false
+//        movingSquare = false
     }
     
     // MARK: Game functions
     
     func startTheGame() {
+        if gameStarted {
+            return
+        }
+        
         gameStarted = true
         if let timeLabel = self.childNode(withName: "timerLabel") as! SKLabelNode? {
             let clock = Clock(start: timeLimit, label: timeLabel, selector: {
@@ -94,6 +99,8 @@ class GameScene: SKScene {
             clock.startCountdown()
             self.clock = clock
         }
+        
+        playerSquare?.startGyros()
     }
     
     func levelCompleted() {
@@ -101,6 +108,7 @@ class GameScene: SKScene {
         victoryLabel?.run(SKAction.fadeIn(withDuration: 1))
         self.clock?.stopCountdown()
         self.loadNextLevel()
+        self.playerSquare?.stopGyro()
     }
     
     @objc func loadNextLevel() {
@@ -126,6 +134,7 @@ class GameScene: SKScene {
         gameStarted = false
         movingSquare = false
         playerSquare?.position = startingPosition!
+        playerSquare?.stopGyro()
         self.clock?.stopCountdown()
     }
     
@@ -136,14 +145,14 @@ class GameScene: SKScene {
             }
             
             for movingObsticle in movingObsticles {
-                movingObsticle.intersects(obsticle)
+                _ = movingObsticle.intersects(obsticle)
                 if movingObsticle.intersects(playerSquare!) {
                     return true
                 }
             }
             
             for movingObsticle in verticalMovingObsticles {
-                movingObsticle.intersects(obsticle)
+                _ = movingObsticle.intersects(obsticle)
                 if movingObsticle.intersects(playerSquare!) {
                     return true
                 }
@@ -192,7 +201,7 @@ class GameScene: SKScene {
             let movingObsticle = MovingObsticle.init(rect: obsticle.frame)
             movingObsticle.fillColor = UIColor.white
             
-            var direction = CGVector.init(dx: 0, dy: 3)
+            let direction = CGVector.init(dx: 0, dy: 1)
             movingObsticle.setDirection(direction: direction)
             verticalMovingObsticles.append(movingObsticle)
             self.addChild(movingObsticle)
@@ -210,7 +219,7 @@ class GameScene: SKScene {
         }
         
         let rect = CGRect.init(x: 0, y: 0, width: squareSize!, height: squareSize!)
-        self.playerSquare = SKShapeNode.init(rect: rect)
+        self.playerSquare = Player.init(rect: rect)
         if let squareNode = self.playerSquare {
             squareNode.name = "player"
             squareNode.position = startingPosition!

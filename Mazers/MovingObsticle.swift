@@ -12,7 +12,7 @@ import GameplayKit
 
 class MovingObsticle: SKShapeNode {
     
-    private var direction: CGVector = CGVector.init(dx: 3, dy: 0)
+    private var direction: CGVector = CGVector.init(dx: 1, dy: 0)
     
     init(rect: CGRect){
         super.init()
