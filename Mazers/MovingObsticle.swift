@@ -13,6 +13,7 @@ import GameplayKit
 class MovingObsticle: SKShapeNode {
     
     private var direction: CGVector = CGVector.init(dx: 1, dy: 0)
+    private var velocity: CGFloat = 3
     
     init(rect: CGRect){
         super.init()
@@ -25,14 +26,18 @@ class MovingObsticle: SKShapeNode {
     }
     
     func takeStep () {
-        self.position.x += direction.dx
-        self.position.y += direction.dy
+        self.position.x += direction.dx * velocity
+        self.position.y += direction.dy * velocity
         
         // Prevent the square from going outside the screen
     }
     
     func setDirection (direction: CGVector) {
         self.direction = direction
+    }
+    
+    func setSpeed (speed: CGFloat) {
+        self.velocity = speed
     }
     
     override func intersects(_ node: SKNode) -> Bool {
