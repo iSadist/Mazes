@@ -34,6 +34,13 @@ class StartScreenViewController: UIViewController {
     }
     
     @IBAction func unwindToStart(segue: UIStoryboardSegue) {
-        print("Unwind segue to start")
+        
+        if let viewController = segue.source as? LevelChooserViewController {
+            // If we came from the level chooser
+        } else if let viewController = segue.source as? GameViewController {
+            // If we came from the game
+        } else if let viewController = segue.source as? SettingsViewController {
+            // If we came from the settings view
+        }
     }
 }

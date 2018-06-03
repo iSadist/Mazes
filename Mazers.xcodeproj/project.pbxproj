@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E11A564C20B9C7CC0016AEB5 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A564B20B9C7CC0016AEB5 /* StartScreenViewController.swift */; };
 		E11A564E20BA098A0016AEB5 /* LevelChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A564D20BA09890016AEB5 /* LevelChooserViewController.swift */; };
+		E123D86320C476590041A437 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E123D86220C476590041A437 /* SettingsViewController.swift */; };
 		E127AFF020B48040007C4BCE /* Level9.sks in Resources */ = {isa = PBXBuildFile; fileRef = E127AFEF20B48040007C4BCE /* Level9.sks */; };
 		E145151B1FAA5D2C0072F1D8 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E145151A1FAA5D2C0072F1D8 /* Level1.sks */; };
 		E14C4B0920B3F4CB00F09D10 /* Level7.sks in Resources */ = {isa = PBXBuildFile; fileRef = E14C4B0820B3F4CB00F09D10 /* Level7.sks */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		E11A564B20B9C7CC0016AEB5 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		E11A564D20BA09890016AEB5 /* LevelChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelChooserViewController.swift; sourceTree = "<group>"; };
+		E123D86220C476590041A437 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E127AFEF20B48040007C4BCE /* Level9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level9.sks; sourceTree = "<group>"; };
 		E145151A1FAA5D2C0072F1D8 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		E14C4B0820B3F4CB00F09D10 /* Level7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level7.sks; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */,
 				E1F5F09E1FB3ADAF0064FDCF /* Player.swift */,
 				E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */,
+				E123D86220C476590041A437 /* SettingsViewController.swift */,
 			);
 			path = Mazers;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				E1F6B2C01FA9261700BCB464 /* GameViewController.swift in Sources */,
 				E1F6B2B81FA9261700BCB464 /* AppDelegate.swift in Sources */,
 				E1F5F09F1FB3ADAF0064FDCF /* Player.swift in Sources */,
+				E123D86320C476590041A437 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
