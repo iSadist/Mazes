@@ -17,6 +17,7 @@ class Player: SKShapeNode {
     private var motionManager: CMMotionManager
     private var timer: Timer?
     private var gyroUpdateInterval = 1.0 / 60.0
+    private var tiltSensitivity = Game.manager.tiltSensitivity
     
     init(rect: CGRect)
     {
@@ -70,7 +71,7 @@ class Player: SKShapeNode {
     
     func updatePosition()
     {
-        let newPosition = CGPoint.init(x: position.x + velocity.dx / 4, y: position.y + velocity.dy / 4)
+        let newPosition = CGPoint.init(x: position.x + velocity.dx * CGFloat(tiltSensitivity) / 10, y: position.y + velocity.dy * CGFloat(tiltSensitivity) / 10)
         position = newPosition
     }
     

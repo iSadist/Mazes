@@ -34,7 +34,7 @@ class LevelChooserViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gameViewController = segue.destination as? GameViewController {
-            gameViewController.startLevel = Int(chosenLevel.dropFirst(5))
+            gameViewController.setNextLevel(level: Int(chosenLevel.dropFirst(5))!)
             gameVC = gameViewController
         }
     }

@@ -10,33 +10,23 @@ class GameViewController: UIViewController {
     private var gameView: SKView?
     private var nextLevel: Int = 1
 
-    var startLevel: Int?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("GameViewController started...")
         
         if let view = self.view as! SKView? {
             gameView = view
             
-            if (startLevel != nil) {
-                nextLevel = startLevel! + 1
-                
-                var levelName = "Level"
-                levelName.append(String(startLevel!))
-                
-                _ = self.loadLevel(name: levelName)
-            } else {
-                self.loadNextLevel()
-            }
-            
+            self.loadNextLevel()
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = debugMode
             view.showsNodeCount = debugMode
         }
+    }
+    
+    func setNextLevel(level: Int) {
+        nextLevel = level
     }
     
     func loadLevel(name: String) -> Bool {
@@ -51,11 +41,17 @@ class GameViewController: UIViewController {
     
     func loadNextLevel() {
         
-        if nextLevel > TOTAL_LEVELS {
+        if nextLevel >= TOTAL_LEVELS {
             performSegue(withIdentifier: "unwindToStart", sender: self)
         }
         
         let levelName = "Level" + String(nextLevel)
+        
+        if Game.manager.getLevel(levelNumber: nextLevel) == nil {
+            let level = LevelStats(level: nextLevel)
+            Game.manager.addLevel(level: level)
+        }
+        
         _ = loadLevel(name: levelName)
         nextLevel += 1
     }

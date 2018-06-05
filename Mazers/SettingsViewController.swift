@@ -10,6 +10,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBAction func tiltSensitivityChanged(_ sender: UISlider) {
+        Game.manager.tiltSensitivity = Int(sender.value)
+    }
     
+    @IBAction func obsticleSpeedChanged(_ sender: UISlider) {
+        Game.manager.obsticleSpeed = Int(sender.value)
+    }
     
 }

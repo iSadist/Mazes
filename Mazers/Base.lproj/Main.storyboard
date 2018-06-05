@@ -30,6 +30,28 @@
             </objects>
             <point key="canvasLocation" x="513" y="134"/>
         </scene>
+        <!--High Score View Controller-->
+        <scene sceneID="xL6-89-E2Q">
+            <objects>
+                <viewController id="4iF-GL-ceJ" customClass="HighScoreViewController" customModule="Mazers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z5Z-gC-TPc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zg4-of-tSA">
+                                <rect key="frame" x="16" y="20" width="343" height="627"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HN2-wX-F3i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNe-qJ-hvx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426.39999999999998" y="-637.33133433283365"/>
+        </scene>
         <!--Settings View Controller-->
         <scene sceneID="Iu8-Ff-MTv">
             <objects>
@@ -40,6 +62,9 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="3wl-9O-jIJ">
                                 <rect key="frame" x="219" y="59" width="142" height="31"/>
+                                <connections>
+                                    <action selector="tiltSensitivityChanged:" destination="lnT-dF-34S" eventType="valueChanged" id="vGT-T4-f9M"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilt sensitivity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jp-bV-LMb">
                                 <rect key="frame" x="16" y="64" width="105" height="21"/>
@@ -68,6 +93,9 @@
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="f8L-DK-Jnb">
                                 <rect key="frame" x="219" y="96.5" width="142" height="31"/>
+                                <connections>
+                                    <action selector="obsticleSpeedChanged:" destination="lnT-dF-34S" eventType="valueChanged" id="0bl-Ae-gg0"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obsticle speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJ9-Qh-gNH">
                                 <rect key="frame" x="16" y="101" width="115" height="21"/>
@@ -157,12 +185,21 @@
                                     <segue destination="lnT-dF-34S" kind="show" id="qjL-DD-p0B"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgJ-E3-0bo">
+                                <rect key="frame" x="150" y="617" width="74" height="30"/>
+                                <state key="normal" title="High score"/>
+                                <connections>
+                                    <segue destination="4iF-GL-ceJ" kind="show" id="Pfw-yn-WVV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="RgJ-E3-0bo" firstAttribute="centerX" secondItem="WG3-Us-VXl" secondAttribute="centerX" id="2K5-rA-yak"/>
                             <constraint firstItem="0fQ-WI-ffQ" firstAttribute="centerX" secondItem="6TV-6U-C53" secondAttribute="centerX" id="33s-Ee-4iQ"/>
                             <constraint firstItem="6TV-6U-C53" firstAttribute="top" secondItem="DFe-Uu-LnQ" secondAttribute="top" constant="-50" id="5e2-a1-yQc"/>
                             <constraint firstItem="Gg2-bc-ecQ" firstAttribute="top" secondItem="0fQ-WI-ffQ" secondAttribute="bottom" constant="8" id="7TK-VA-3cr"/>
+                            <constraint firstAttribute="bottom" secondItem="RgJ-E3-0bo" secondAttribute="bottom" constant="20" symbolic="YES" id="8yP-Xu-vyT"/>
                             <constraint firstItem="6TV-6U-C53" firstAttribute="leading" secondItem="DFe-Uu-LnQ" secondAttribute="leading" id="Cwe-O6-dKF"/>
                             <constraint firstItem="53D-JE-mb7" firstAttribute="centerX" secondItem="6TV-6U-C53" secondAttribute="centerX" id="Eq6-3v-JhZ"/>
                             <constraint firstItem="Gg2-bc-ecQ" firstAttribute="centerX" secondItem="6TV-6U-C53" secondAttribute="centerX" id="JTH-yI-daa"/>
@@ -306,6 +343,6 @@
         <image name="StartScreen" width="376" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mqn-2W-m0w"/>
+        <segue reference="IoM-V3-mby"/>
     </inferredMetricsTieBreakers>
 </document>

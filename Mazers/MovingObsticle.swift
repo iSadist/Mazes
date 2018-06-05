@@ -13,7 +13,7 @@ import GameplayKit
 class MovingObsticle: SKShapeNode {
     
     private var direction: CGVector = CGVector.init(dx: 1, dy: 0)
-    private var velocity: CGFloat = 3
+    private var velocity: CGFloat = CGFloat(Game.manager.obsticleSpeed)
     
     init(rect: CGRect){
         super.init()

@@ -21,6 +21,7 @@ class GameScene: SKScene {
     private var timeLimit = 600
     private var clock: Clock?
     private var finishTime: Float?
+    private var deathNumber: Int = 0
     
     private let CONTROL_WITH_TOUCH = false
     
@@ -55,6 +56,10 @@ class GameScene: SKScene {
         self.storeVerticalMovingObsticles()
         
         self.createPlayer()
+    }
+    
+    override func sceneDidLoad() {
+        
     }
     
     // MARK: Touch events
@@ -119,6 +124,11 @@ class GameScene: SKScene {
     func levelCompleted() {
         // Display a victory message
         self.resetLevel()
+        
+        let currentLevel = Game.manager.getLevel(levelNumber: Int((self.view?.scene?.name)!)!)
+        _ = currentLevel?.setNewTime(time: finishTime!)
+        currentLevel?.timesDied = deathNumber
+        
         victoryLabel?.run(SKAction.fadeIn(withDuration: 1.0))
         self.loadNextLevel()
     }
@@ -144,6 +154,7 @@ class GameScene: SKScene {
         playerSquare?.position = startingPosition!
         startMessage?.run(SKAction.fadeIn(withDuration: 1.0))
         self.resetLevel()
+        deathNumber += 1
     }
     
     func resetLevel() {
@@ -279,6 +290,7 @@ class GameScene: SKScene {
             movingObsticle.takeStep()
         }
     }
+    
 }
 
 extension CGPoint {
