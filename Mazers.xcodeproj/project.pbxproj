@@ -16,12 +16,13 @@
 		E14C4B0B20B3F98200F09D10 /* Level8.sks in Resources */ = {isa = PBXBuildFile; fileRef = E14C4B0A20B3F98200F09D10 /* Level8.sks */; };
 		E155EEC920C7042A00532DB4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E155EEC820C7042A00532DB4 /* Game.swift */; };
 		E155EECB20C709EF00532DB4 /* LevelStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E155EECA20C709EF00532DB4 /* LevelStats.swift */; };
-		E155EECD20C7370500532DB4 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E155EECC20C7370500532DB4 /* HighScoreViewController.swift */; };
 		E1667CEA1FB76B8E00A60E62 /* Level99.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CE91FB76B8E00A60E62 /* Level99.sks */; };
 		E1667CEC1FB76C6500A60E62 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CEB1FB76C6500A60E62 /* Level4.sks */; };
 		E1667CEE1FB776DB00A60E62 /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1667CED1FB776DB00A60E62 /* Level5.sks */; };
 		E16B430420A8994500B6C5D3 /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = E16B430320A8994500B6C5D3 /* Level6.sks */; };
 		E1729B2C1FB7646C004AB358 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1729B2B1FB7646C004AB358 /* Level3.sks */; };
+		E182E70320C8158A003DD2A1 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182E70220C8158A003DD2A1 /* HighScoreCell.swift */; };
+		E182E70520C81988003DD2A1 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182E70420C81988003DD2A1 /* HighScoreViewController.swift */; };
 		E1CCA53720BD2E3500377E4A /* Level10.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1CCA53620BD2E3500377E4A /* Level10.sks */; };
 		E1F5F09F1FB3ADAF0064FDCF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F09E1FB3ADAF0064FDCF /* Player.swift */; };
 		E1F5F0A11FB3ADC00064FDCF /* MovingObsticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */; };
@@ -65,12 +66,13 @@
 		E14C4B0A20B3F98200F09D10 /* Level8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level8.sks; sourceTree = "<group>"; };
 		E155EEC820C7042A00532DB4 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		E155EECA20C709EF00532DB4 /* LevelStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelStats.swift; sourceTree = "<group>"; };
-		E155EECC20C7370500532DB4 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		E1667CE91FB76B8E00A60E62 /* Level99.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level99.sks; sourceTree = "<group>"; };
 		E1667CEB1FB76C6500A60E62 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
 		E1667CED1FB776DB00A60E62 /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
 		E16B430320A8994500B6C5D3 /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
 		E1729B2B1FB7646C004AB358 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		E182E70220C8158A003DD2A1 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
+		E182E70420C81988003DD2A1 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		E1CCA53620BD2E3500377E4A /* Level10.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level10.sks; sourceTree = "<group>"; };
 		E1F5F09E1FB3ADAF0064FDCF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingObsticle.swift; sourceTree = "<group>"; };
@@ -171,7 +173,8 @@
 				E11A564B20B9C7CC0016AEB5 /* StartScreenViewController.swift */,
 				E11A564D20BA09890016AEB5 /* LevelChooserViewController.swift */,
 				E123D86220C476590041A437 /* SettingsViewController.swift */,
-				E155EECC20C7370500532DB4 /* HighScoreViewController.swift */,
+				E182E70420C81988003DD2A1 /* HighScoreViewController.swift */,
+				E182E70220C8158A003DD2A1 /* HighScoreCell.swift */,
 				E1F5F0A01FB3ADC00064FDCF /* MovingObsticle.swift */,
 				E1F5F09E1FB3ADAF0064FDCF /* Player.swift */,
 				E1F5F0A21FB3ADCE0064FDCF /* Clock.swift */,
@@ -348,15 +351,16 @@
 				E1F6B2BE1FA9261700BCB464 /* GameScene.swift in Sources */,
 				E155EECB20C709EF00532DB4 /* LevelStats.swift in Sources */,
 				E155EEC920C7042A00532DB4 /* Game.swift in Sources */,
+				E182E70520C81988003DD2A1 /* HighScoreViewController.swift in Sources */,
 				E1F5F0A31FB3ADCE0064FDCF /* Clock.swift in Sources */,
 				E11A564E20BA098A0016AEB5 /* LevelChooserViewController.swift in Sources */,
 				E11A564C20B9C7CC0016AEB5 /* StartScreenViewController.swift in Sources */,
 				E1F5F0A11FB3ADC00064FDCF /* MovingObsticle.swift in Sources */,
+				E182E70320C8158A003DD2A1 /* HighScoreCell.swift in Sources */,
 				E1F6B2C01FA9261700BCB464 /* GameViewController.swift in Sources */,
 				E1F6B2B81FA9261700BCB464 /* AppDelegate.swift in Sources */,
 				E1F5F09F1FB3ADAF0064FDCF /* Player.swift in Sources */,
 				E123D86320C476590041A437 /* SettingsViewController.swift in Sources */,
-				E155EECD20C7370500532DB4 /* HighScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
