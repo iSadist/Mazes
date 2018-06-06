@@ -42,9 +42,5 @@ class StartScreenViewController: UIViewController {
         } else if let viewController = segue.source as? SettingsViewController {
             // If we came from the settings view
         }
-        
-        for level in Game.manager.completedLevels {
-            print("Level " + String(level.level) + " Time: " + String(level.fastestTime!) + " Deaths: " + String(level.timesDied))
-        }
     }
 }

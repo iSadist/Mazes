@@ -44,6 +44,8 @@ class HighScoreViewController: UITableViewController {
             cell.levelNumberLabel.text = String(indexPath.row)
             cell.levelFastestTimeLabel.text = String(currentLevel.fastestTime!)
             cell.timesDiedLabel.text = String(currentLevel.timesDied)
+            
+            cell.backgroundColor = getRandomColor()
         }
 
         return cell
